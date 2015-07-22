@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/planListHeader"
+            style="@style/Header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/tv_plan"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageButton
+            android:id="@+id/button_navi_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/button_navi_previous" />
+
+        <ImageButton
+            android:id="@+id/button_navi_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:src="@drawable/button_navi_next" />
+
+        <RelativeLayout
+            android:id="@+id/plan_day_topic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/button_navi_next"
+            android:layout_alignTop="@id/button_navi_next"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toLeftOf="@id/button_navi_next"
+            android:layout_toRightOf="@id/button_navi_previous"
+            android:background="@color/col_day_default" >
+
+            <TextView
+                android:id="@+id/tv_plan_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/col_white"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/plan_day_topic"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/listViewPlan"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:divider="@color/col_dark_blue"
+                android:dividerHeight="3dip" >
+
+                <!-- Preview: listitem=@layout/plan_list_item -->
+
+            </ListView>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/plan_list_act.xml -->

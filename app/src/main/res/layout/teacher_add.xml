@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <TextView
+        android:id="@+id/teacherAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_teacher_add"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_teacher_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dip"
+                android:paddingTop="10dip" >
+
+                <TextView
+                    android:id="@+id/labelAnrede"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/tv_teacher_anrede"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <RadioGroup
+                    android:id="@+id/opt_group_anrede"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/labelAnrede"
+                    android:orientation="horizontal" >
+
+	                <RadioButton
+	                    android:id="@+id/opt_teacher_herr"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="32dip"
+	                    android:checked="true"
+	                    android:text="@string/opt_teacher_herr"
+	                    android:textColor="@color/col_black"
+	                    android:textSize="15dip" />
+	
+	                <RadioButton
+	                    android:id="@+id/opt_teacher_frau"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:layout_marginLeft="15dip"
+	                    android:text="@string/opt_teacher_frau"
+	                    android:textColor="@color/col_black"
+	                    android:textSize="15dip" />
+
+	            </RadioGroup>
+                
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip" >
+
+                <TextView
+                    android:id="@+id/labelVorname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_teacher_vorname"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_teacher_vorname"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelVorname"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/labelName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_teacher_vorname"
+                    android:text="@string/tv_teacher_name"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_teacher_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelName"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/labelKuerzel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/edit_teacher_kuerzel"
+                    android:layout_alignLeft="@+id/edit_teacher_name"
+                    android:layout_marginRight="12dip"
+                    android:text="@string/tv_teacher_kuerzel"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_teacher_kuerzel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/edit_teacher_name"
+                    android:layout_toRightOf="@id/labelKuerzel"
+                    android:inputType="textPersonName"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/labelTelefon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_teacher_kuerzel"
+                    android:text="@string/tv_teacher_telefon"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_teacher_telefon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelTelefon"
+                    android:inputType="phone"
+                    android:singleLine="true" />
+                
+                <TextView
+                    android:id="@+id/labelEMail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_teacher_telefon"
+                    android:text="@string/tv_teacher_email"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+
+                <EditText
+                    android:id="@+id/edit_teacher_email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelEMail"
+                    android:inputType="textEmailAddress"
+                    android:singleLine="true" />
+                
+                <TextView
+                    android:id="@+id/labelBemerkungen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_teacher_email"
+                    android:text="@string/tv_bemerkungen"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+
+                <EditText
+                    android:id="@+id/edit_teacher_bemerkungen"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelBemerkungen"
+                    android:inputType="textMultiLine" />
+                
+                </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+                
+                <Button
+                    android:id="@+id/button_teacher_add_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_ok" />
+
+                <Button
+                    android:id="@+id/button_teacher_add_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_cancel" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

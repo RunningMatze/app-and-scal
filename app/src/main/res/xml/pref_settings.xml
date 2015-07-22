@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <PreferenceCategory 
+        android:title="Kalender-Einstellungen">
+        <ListPreference 
+            android:entries="@array/year_text" 
+            android:entryValues="@array/year_value" 
+            android:title="Schuljahr" 
+            android:key="cal_year"
+            android:dialogTitle="Schuljahr"
+            android:summary="Bitte wähle das gewünschte Schuljahr"/>
+        <CheckBoxPreference 
+            android:defaultValue="false" 
+            android:summaryOff="Samstag ist kein Unterrichtstag" 
+            android:title="Samstags-Unterricht" 
+            android:summaryOn="Samstag ist Unterrichtstag" 
+            android:key="cal_saturday"/>
+        <CheckBoxPreference android:summaryOn="Uhrzeit in Kalender-Titelzeile (Tagesansicht) wird ausgeblendet" android:summaryOff="Uhrzeit in Kalender-Titelzeile (Tagesansicht) wird eingeblendet" android:key="cal_clock" android:title="Uhrzeit anzeigen" android:defaultValue="true"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

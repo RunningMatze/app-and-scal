@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_hw_day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/col_day_default"
+        android:text="@string/tv_empty"
+        android:textColor="@color/col_white"
+        android:textSize="14dip"
+        android:visibility="gone"
+        android:gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:id="@+id/listItemHomework"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dip" >
+
+        <TextView
+            android:id="@+id/tv_label_erl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginRight="4dip"
+            android:text="@string/tv_hausi_erl_am"
+            android:textColor="@color/col_black"
+            android:textSize="13dip" />
+
+        <TextView
+            android:id="@+id/tv_label_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_label_erl"
+            android:text="@string/tv_hausi_ab_am"
+            android:textColor="@color/col_black"
+            android:textSize="13dip" />
+
+        <TextView
+            android:id="@+id/tv_date_erl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_label_erl"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="13dip" />
+
+        <TextView
+            android:id="@+id/tv_date_ab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_label_erl"
+            android:layout_toRightOf="@+id/tv_label_erl"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="13dip" />
+
+        <CheckBox
+            android:id="@+id/check_erledigt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_label_ab"
+            android:text="@string/tv_nicht_erledigt"
+            android:textColor="@color/col_nicht_erledigt"
+            android:textSize="16dip" />
+        
+        <TextView
+            android:id="@+id/tv_hw_fach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv_date_erl"
+            android:text="@string/tv_empty"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/col_black"
+            android:textSize="26dip"
+            android:textStyle="bold"
+            android:shadowColor="@color/col_day_default"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3" />
+
+        <TextView
+            android:id="@+id/tv_aufgabe"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/check_erledigt"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="14dip" />
+
+        <ImageButton
+            android:id="@+id/button_delete_hw"
+            style="@style/DeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/check_erledigt"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dip"
+            android:contentDescription="@string/cd_homework_delete" />
+
+        <ImageButton
+            android:id="@+id/button_edit_hw"
+            style="@style/SettingsSmallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/button_delete_hw"
+            android:layout_toLeftOf="@+id/button_delete_hw"
+            android:layout_marginRight="5dip"
+            android:contentDescription="@string/cd_homework_edit"
+            android:src="@drawable/settings_small_button" />
+        
+    </RelativeLayout>
+
+</LinearLayout>

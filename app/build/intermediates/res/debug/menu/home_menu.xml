@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_home_home" android:title="@string/menu_home_home" android:icon="@drawable/ic_menu_home"></item>
+    
+
+</menu><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/menu/home_menu.xml -->

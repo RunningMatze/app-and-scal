@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/planEditAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_plan_edit"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_teacher_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip" >
+                <TextView
+                    android:id="@+id/tv_edit_plan_header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="4dip"
+                    android:background="@color/col_day_default"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="2dip"
+                    android:paddingTop="2dip"
+                    android:text="TextView"
+                    android:textColor="@color/col_white"
+                    android:textSize="16dip" />
+
+                <TextView
+                    android:id="@+id/labelFach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/tv_edit_plan_header"
+                    android:text="@string/tv_faecher_fach"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_fach_bezeichnung"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelFach"
+                    android:layout_toLeftOf="@+id/button_fach_search"
+                    android:enabled="false"
+                    android:hint="@string/hint_fach_search"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="false" >
+
+                    <requestFocus />
+                </EditText>
+                
+                <ImageButton
+                    android:id="@+id/button_fach_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/edit_fach_bezeichnung"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+
+                <TextView
+                    android:id="@+id/labelBeginn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_fach_bezeichnung"
+                    android:layout_marginBottom="2dip"
+                    android:text="@string/tv_plan_beginn"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <TimePicker
+                    android:id="@+id/time_hour_begin"
+                    android:layout_below="@+id/labelBeginn"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/labelEnde"
+                    android:layout_below="@+id/edit_fach_bezeichnung"
+                    android:layout_alignLeft="@+id/time_hour_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_plan_ende"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <TimePicker
+                    android:id="@+id/time_hour_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/labelBeginn" />
+
+                <TextView
+                    android:id="@+id/labelRaum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignBaseline="@+id/edit_plan_raum"
+                    android:layout_marginRight="4dip"
+                    android:text="@string/tv_raum"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_plan_raum"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/time_hour_begin"
+                    android:layout_marginTop="4dip"
+                    android:layout_toRightOf="@+id/labelRaum"
+                    android:maxLength="25"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/labelBemerkung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_plan_raum"
+                    android:layout_marginBottom="2dip"
+                    android:layout_marginTop="2dip"
+                    android:text="@string/tv_bemerkungen"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_plan_bemerkungen"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/labelBemerkung"
+                    android:inputType="textMultiLine"
+                    android:maxLines="2" />
+                
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button_plan_edit_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_ok" />
+
+                <Button
+                    android:id="@+id/button_plan_edit_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_cancel" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+    
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/plan_edit.xml -->

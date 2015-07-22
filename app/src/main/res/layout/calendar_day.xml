@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dip" >
+
+        <ImageButton
+            android:id="@+id/button_navi_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_home"
+            android:src="@drawable/button_navi_home" />
+
+        <ImageButton
+            android:id="@+id/button_navi_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/button_navi_home"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_back"
+            android:src="@drawable/button_navi_previous" />
+
+        <ImageButton
+            android:id="@+id/button_navi_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_next"
+            android:src="@drawable/button_navi_next" />
+
+        <RelativeLayout
+            android:id="@+id/cal_day_topic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/button_navi_home"
+            android:layout_alignTop="@id/button_navi_home"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toLeftOf="@id/button_navi_next"
+            android:layout_toRightOf="@id/button_navi_previous"
+            android:background="@color/col_day_default" >
+
+            <TextView
+                android:id="@+id/tv_cal_day_dayshort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="12dip"
+                android:text=""
+                android:textColor="@color/col_white"
+                android:textSize="20dip"
+                android:textStyle="bold" />
+
+            <DigitalClock
+                android:id="@+id/digitalClock1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_cal_day_dayshort"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/tv_cal_day_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="4dip"
+                android:text=""
+                android:textColor="@color/col_white"
+                android:textSize="16dip" />
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/tv_feiertag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cal_day_topic"
+            android:background="@color/col_tv_feiertag"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/col_white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_day_background"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/menu_day_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_plan"
+            android:src="@drawable/menu_day_s" />
+
+        <ImageView
+            android:id="@+id/menu_day_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_hausaufgaben"
+            android:src="@drawable/menu_day_h" />
+
+        <ImageView
+            android:id="@+id/menu_day_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_tests_list"
+            android:src="@drawable/menu_day_t" />
+
+        <ImageView
+            android:id="@+id/menu_day_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cd_menu_notes"
+            android:src="@drawable/menu_day_n" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipperDay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/view_day_plan"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/frameDayPlanDefault"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/dayPlanHeader"
+                    style="@style/Header"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/tv_plan"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <ListView
+                    android:id="@+id/listViewDayPlan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/col_dark_blue"
+                    android:dividerHeight="3dip" >
+                    <!-- Preview: listitem=@layout/day_plan_list_item -->
+                </ListView>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/frameDayPlanFree"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+                
+                <ImageView
+                    android:id="@+id/imageFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dip"
+                    android:src="@drawable/smile" />
+                <TextView
+                    android:id="@+id/tv_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_wochenende"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/col_yellow" />
+
+            </LinearLayout>
+        
+        </LinearLayout>
+            
+        <LinearLayout
+            android:id="@+id/view_day_homework"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dayHausaufgabenHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_hausaufgaben"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/menu_day_background"
+		        android:gravity="center" >
+
+                <ImageView
+		            android:id="@+id/menu_day_erl"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginRight="12dip"
+		            android:contentDescription="@string/tv_erledigen"
+		            android:src="@drawable/menu_day_erl" />
+
+		        <ImageView
+		            android:id="@+id/menu_day_ab"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:contentDescription="@string/tv_abgeben"
+		            android:src="@drawable/menu_day_ab" />
+                
+            </LinearLayout>
+            
+            <ListView
+                android:id="@+id/listViewDayHomework"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/col_dark_blue"
+                android:dividerHeight="3dip" >
+                <!-- Preview: listitem=@layout/day_homework_list_item -->
+
+            </ListView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_day_tests"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+            
+            <LinearLayout
+                android:id="@+id/frameDayTestDefault"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            
+	            <TextView
+	                android:id="@+id/dayTestsHeader"
+	                style="@style/Header"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:gravity="center_horizontal"
+	                android:text="@string/tv_tests"
+	                android:textAppearance="?android:attr/textAppearanceMedium" />
+		
+	            <ListView
+	                android:id="@+id/listViewDayTests"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content" >
+	                <!-- Preview: listitem=@layout/day_test_list_item -->
+	
+	            </ListView>
+        	
+        	</LinearLayout>
+        	
+            <LinearLayout
+                android:id="@+id/frameDayTestFree"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/imageTestFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dip"
+                    android:src="@drawable/smile" />
+
+                <TextView
+                    android:id="@+id/tv_test_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_wochenende"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/col_yellow" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_day_notizen"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/dayNotizenHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_notizen"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            
+            <ListView
+                android:id="@+id/listViewDayNotes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+            </ListView>
+
+        </LinearLayout>
+    </ViewFlipper>
+
+</LinearLayout>

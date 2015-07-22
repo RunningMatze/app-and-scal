@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_note_day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/col_day_default"
+        android:text="@string/tv_empty"
+        android:textColor="@color/col_white"
+        android:textSize="14dip"
+        android:visibility="gone"
+        android:gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:id="@+id/listItemTest"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dip" >
+
+        <ImageButton
+            android:id="@+id/button_edit_note"
+            style="@style/SettingsSmallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/cd_note_edit"
+            android:src="@drawable/settings_small_button" />
+        
+        <ImageButton
+            android:id="@+id/button_delete_note"
+            style="@style/DeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/cd_note_delete" />
+        
+        <TextView
+            android:id="@+id/tv_datum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/button_delete_note"
+            android:layout_marginRight="4dip"
+            android:layout_marginTop="4dip"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="14dip" />
+
+        <TextView
+            android:id="@+id/tv_notiz"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/button_edit_note"
+            android:layout_marginTop="5dip"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_black"
+            android:textSize="14dip" />
+        
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/day_note_list_item.xml -->

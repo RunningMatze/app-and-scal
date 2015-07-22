@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/wrapTestArtSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        
+        <Button
+            android:id="@+id/button_cancel_testart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/button_back"
+            android:layout_centerHorizontal="true" />
+
+        <ListView
+            android:id="@+id/list_search_testart"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/button_cancel_testart" >
+
+            <!-- Preview: listitem=@layout/testart_search_item -->
+        </ListView>
+        
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/testart_search_list.xml -->

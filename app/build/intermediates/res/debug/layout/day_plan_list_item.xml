@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/FrameLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@drawable/stunden_background" >
+
+        <ImageView
+            android:id="@+id/image_plan_stunde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:src="@drawable/stunde_1" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_plan_noedu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/image_kein_unterricht"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dip"
+            android:layout_marginTop="8dip"
+            android:src="@drawable/kein_unterricht" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_plan_hour"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/layout_plan_begin_end"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="2dip"
+            android:background="@drawable/stunde_zeit_back"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_plan_stunde_beginn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:text="@string/tv_time_dummy_von"
+                android:textColor="@color/col_dark_blue"
+                android:textSize="18dip" />
+
+            <TextView
+                android:id="@+id/tv_plan_stunde_ende"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginLeft="2dip"
+                android:layout_marginRight="2dip"
+                android:text="@string/tv_time_dummy_bis"
+                android:textColor="@color/col_dark_blue"
+                android:textSize="18dip" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_plan_list_fach"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toRightOf="@id/layout_plan_begin_end"
+            android:shadowColor="@color/col_blue"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_black"
+            android:textSize="16dip" />
+
+        <TextView
+            android:id="@+id/label_raum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_plan_list_fach"
+            android:layout_toRightOf="@+id/layout_plan_begin_end"
+            android:layout_marginRight="4dip"
+            android:text="@string/tv_raum"
+            android:textColor="@color/col_black"
+            android:textSize="15dip" />
+
+        <TextView
+            android:id="@+id/tv_plan_list_raum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_plan_list_fach"
+            android:layout_toRightOf="@+id/label_raum"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_black"
+            android:textSize="15dip" />
+
+
+        <TextView
+            android:id="@+id/tv_plan_list_bemerkung"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/label_raum"
+            android:layout_marginRight="2dip"
+            android:layout_marginBottom="2dip"
+            android:layout_toRightOf="@+id/layout_plan_begin_end"
+            android:singleLine="false"
+            android:maxLines="3"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="12dip" />
+
+    </RelativeLayout>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/day_plan_list_item.xml -->

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <TextView
+        android:id="@+id/faecherAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_faecher_add"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_teacher_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <RelativeLayout
+                android:id="@+id/relativeLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip" >
+
+                <TextView
+                    android:id="@+id/labelFach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_faecher_fach"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_fach_bezeichnung"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelFach"
+                    android:layout_toLeftOf="@+id/button_fach_search"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="false" >
+
+                    <requestFocus />
+                </EditText>
+                
+                <ImageButton
+                    android:id="@+id/button_fach_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/edit_fach_bezeichnung"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+                
+                <TextView
+                    android:id="@+id/labelKurzcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_fach_bezeichnung"
+                    android:text="@string/tv_faecher_kurzcode"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_fach_kurcode"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelKurzcode"
+                    android:inputType="textAutoComplete|textCapWords|textPersonName"
+                    android:maxLength="5"
+                    android:singleLine="true" />
+
+                <TextView
+                    android:id="@+id/labelFachlehrer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_fach_kurcode"
+                    android:text="@string/tv_faecher_teacher"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <ImageButton
+                    android:id="@+id/button_teacher_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/labelFachlehrer"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+                
+                <TextView
+                    android:id="@+id/edit_fach_teacher"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelFachlehrer"
+                    android:layout_marginRight="4dip"
+                    android:layout_marginTop="2dip"
+                    android:layout_toLeftOf="@+id/button_teacher_search"
+                    android:text="@string/tv_faecher_noteacher"
+                    android:textColor="@color/col_dark_blue"
+                    android:textSize="16dip" />
+
+                <TextView
+                    android:id="@+id/labelBemerkungen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/edit_fach_teacher"
+                    android:layout_marginTop="4dip"
+                    android:text="@string/tv_bemerkungen"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+                <EditText
+                    android:id="@+id/edit_fach_bemerkungen"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelBemerkungen"
+                    android:inputType="textMultiLine" />
+                
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+                
+                <Button
+                    android:id="@+id/button_faecher_add_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_ok" />
+
+                <Button
+                    android:id="@+id/button_faecher_add_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_cancel" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

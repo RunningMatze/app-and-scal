@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="2" >
+
+    <TextView
+        android:id="@+id/notesAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_notes_add"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_notes_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+		    <RelativeLayout
+		        android:id="@+id/relativeLayout2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		
+                <TextView
+                    android:id="@+id/labelDatum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_datum"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+		        
+		        <ImageButton
+		            android:id="@+id/button_navi_home"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelDatum"
+		            android:layout_alignParentLeft="true"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_home"
+		            android:src="@drawable/button_navi_home" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_previous"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelDatum"
+		            android:layout_toRightOf="@id/button_navi_home"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_back"
+		            android:src="@drawable/button_navi_previous" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_next"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_below="@+id/labelDatum"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_next"
+		            android:src="@drawable/button_navi_next" />
+		
+
+
+		        <RelativeLayout
+		            android:id="@+id/cal_notes_topic"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignBottom="@id/button_navi_home"
+		            android:layout_alignTop="@id/button_navi_home"
+		            android:layout_alignWithParentIfMissing="true"
+		            android:layout_marginBottom="2dip"
+		            android:layout_marginTop="2dip"
+		            android:layout_toLeftOf="@id/button_navi_next"
+		            android:layout_toRightOf="@id/button_navi_previous"
+		            android:background="@color/col_day_default" >
+		
+		            <TextView
+		                android:id="@+id/tv_notes_datum"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="4dip"
+		                android:text=""
+		                android:textColor="@color/col_white"
+						android:textSize="16dip" />
+		
+		        </RelativeLayout>
+                
+		    </RelativeLayout>
+		   	    		   			 
+		 	<RelativeLayout
+		        android:id="@+id/relativeLayout4"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		        
+                <TextView
+                    android:id="@+id/labelNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dip"
+                    android:text="@string/tv_notiz"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+                
+
+                <EditText
+                    android:id="@+id/edit_notes"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelNotes"
+                    android:inputType="textMultiLine" />
+                
+		    </RelativeLayout>
+            
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+                <Button
+                    android:id="@+id/button_notes_add_ok"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_ok" />
+
+                <Button
+                    android:id="@+id/button_notes_add_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_cancel" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/notes_add.xml -->

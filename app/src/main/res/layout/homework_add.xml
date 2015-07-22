@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="2" >
+    
+
+    <TextView
+        android:id="@+id/hausiAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_hausi_add"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_hausi_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:paddingTop="5dip" >
+
+                <TextView
+                    android:id="@+id/labelFach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_faecher_fach"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_fach_bezeichnung"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelFach"
+                    android:layout_toLeftOf="@+id/button_fach_search"
+                    android:enabled="false"
+                    android:hint="@string/hint_fach_search"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="false" >
+                    <requestFocus />
+                </EditText>
+                
+
+                <ImageButton
+                    android:id="@+id/button_fach_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/edit_fach_bezeichnung"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+                
+            </RelativeLayout>
+
+		    <RelativeLayout
+		        android:id="@+id/relativeLayout2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		
+                <TextView
+                    android:id="@+id/labelHausiErledigen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_hausi_erl_am"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+		        
+            	<ImageButton
+		            android:id="@+id/button_navi_home_1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelHausiErledigen"
+		            android:layout_alignParentLeft="true"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_home"
+		            android:src="@drawable/button_navi_home" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_previous_1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelHausiErledigen"
+		            android:layout_toRightOf="@id/button_navi_home_1"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_back"
+		            android:src="@drawable/button_navi_previous" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_next_1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_below="@+id/labelHausiErledigen"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_next"
+		            android:src="@drawable/button_navi_next" />
+		
+		        <RelativeLayout
+		            android:id="@+id/cal_hw_erl_topic"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignBottom="@id/button_navi_home_1"
+		            android:layout_alignTop="@id/button_navi_home_1"
+		            android:layout_alignWithParentIfMissing="true"
+		            android:layout_marginBottom="2dip"
+		            android:layout_marginTop="2dip"
+		            android:layout_toLeftOf="@id/button_navi_next_1"
+		            android:layout_toRightOf="@id/button_navi_previous_1"
+		            android:background="@color/col_day_default" >
+		
+		            <TextView
+		                android:id="@+id/tv_homework_erltag"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="4dip"
+		                android:text=""
+		                android:textColor="@color/col_white"
+						android:textSize="16dip" />
+		
+		        </RelativeLayout>
+		        
+		    </RelativeLayout>
+
+		   	<RelativeLayout
+		        android:id="@+id/relativeLayout3"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		
+                <TextView
+                    android:id="@+id/labelHausiAbzugeben"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_hausi_abgabe_am"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+		        
+            	<ImageButton
+		            android:id="@+id/button_navi_home_2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelHausiAbzugeben"
+		            android:layout_alignParentLeft="true"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_home"
+		            android:src="@drawable/button_navi_home" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_previous_2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelHausiAbzugeben"
+		            android:layout_toRightOf="@id/button_navi_home_2"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_back"
+		            android:src="@drawable/button_navi_previous" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_next_2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_below="@+id/labelHausiAbzugeben"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_next"
+		            android:src="@drawable/button_navi_next" />
+		
+		        <RelativeLayout
+		            android:id="@+id/cal_hw_abgabe_topic"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignBottom="@id/button_navi_home_2"
+		            android:layout_alignTop="@id/button_navi_home_2"
+		            android:layout_alignWithParentIfMissing="true"
+		            android:layout_marginBottom="2dip"
+		            android:layout_marginTop="2dip"
+		            android:layout_toLeftOf="@id/button_navi_next_2"
+		            android:layout_toRightOf="@id/button_navi_previous_2"
+		            android:background="@color/col_day_default" >
+		
+		            <TextView
+		                android:id="@+id/tv_homework_abgabetag"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="4dip"
+		                android:text=""
+		                android:textColor="@color/col_white"
+						android:textSize="16dip" />
+		
+		        </RelativeLayout>
+		        
+		    </RelativeLayout>
+		   	
+		   	<RelativeLayout
+		        android:id="@+id/relativeLayout4"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		        
+	            <TextView
+	                android:id="@+id/labelHausiBeschreibung"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_alignParentTop="true"
+	                android:text="@string/tv_aufgaben"
+	                android:textColor="@color/col_black"
+	                android:textSize="15dip" />
+	
+	            <EditText
+	                android:id="@+id/edit_homework_aufgaben"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@+id/labelHausiBeschreibung"
+	                android:inputType="textMultiLine" />
+            		   	    		   	
+		    </RelativeLayout>
+		   	    		   			    
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button_homework_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_eintragen" />
+
+                <Button
+                    android:id="@+id/button_homework_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_back" />
+                
+                </LinearLayout>
+		   	
+		</LinearLayout>
+        
+    </ScrollView>
+    
+</LinearLayout>

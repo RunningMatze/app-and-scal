@@ -1,0 +1,2794 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dip" >
+
+        <ImageButton
+            android:id="@+id/button_navi_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_home"
+            android:src="@drawable/button_navi_home" />
+
+        <ImageButton
+            android:id="@+id/button_navi_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/button_navi_home"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_back"
+            android:src="@drawable/button_navi_previous" />
+
+        <ImageButton
+            android:id="@+id/button_navi_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_next"
+            android:src="@drawable/button_navi_next" />
+
+        <RelativeLayout
+            android:id="@+id/cal_week_topic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/button_navi_home"
+            android:layout_alignTop="@id/button_navi_home"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toLeftOf="@id/button_navi_next"
+            android:layout_toRightOf="@id/button_navi_previous"
+            android:background="@color/col_day_default" >
+
+            <TextView
+                android:id="@+id/tv_cal_week_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="12dip"
+                android:text="@string/tv_empty"
+                android:textColor="@color/col_white"
+                android:textSize="17dip"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_cal_week_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="4dip"
+                android:text="@string/tv_empty"
+                android:textColor="@color/col_white"
+                android:textSize="12dip" />
+
+            <TextView
+                android:id="@+id/tv_cal_week_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/tv_cal_week_from"
+                android:layout_marginRight="4dip"
+                android:text="@string/tv_empty"
+                android:textColor="@color/col_white"
+                android:textSize="12dip" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_day_background"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/menu_week_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_plan"
+            android:src="@drawable/menu_day_s" />
+
+        <ImageView
+            android:id="@+id/menu_week_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_hausaufgaben"
+            android:src="@drawable/menu_day_h" />
+
+        <ImageView
+            android:id="@+id/menu_week_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_tests_list"
+            android:src="@drawable/menu_day_t" />
+
+        <ImageView
+            android:id="@+id/menu_week_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cd_menu_notes"
+            android:src="@drawable/menu_day_n" />
+    </LinearLayout>
+
+    <ViewFlipper
+        android:id="@+id/viewFlipperWeek"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/view_week_plan"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/weekPlanHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_plan"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <HorizontalScrollView
+                android:id="@+id/scroll_week_plan_h"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ScrollView
+                    android:id="@+id/scroll_week_plan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:id="@+id/table_week_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/col_mail_gray" >
+
+                        <TableRow
+                            android:id="@+id/row_week_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_1_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_mo"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_1_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_2_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_di"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_2_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_3_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_mi"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_3_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_4_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_do"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_4_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                    
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_5_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_fr"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_5_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_1_day_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_day_weekend"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/header_6_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:minWidth="50dip"
+                                    android:text="@string/day_sa"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:textColor="@color/col_white" />
+
+                                <TextView
+                                    android:id="@+id/header_6_value"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/tv_empty"
+                                    android:textAppearance="?android:attr/textAppearanceSmall"
+                                    android:textColor="@color/col_yellow" />
+                                    
+                            </LinearLayout>
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_2_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_1" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_2_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/row_d1_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textColor="@color/col_black"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/row_d1_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textColor="@color/col_dark_blue"
+                                    android:textSize="11dip" />
+                                <TextView
+                                    android:id="@+id/row_d1_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textColor="@color/col_dark_blue"
+                                    android:textSize="11dip" />
+
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_2_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+
+                                <TextView
+                                    android:id="@+id/row_d2_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_2_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+
+                                <TextView
+                                    android:id="@+id/row_d3_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_2_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+
+                                <TextView
+                                    android:id="@+id/row_d4_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d4_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout                              
+                                android:id="@+id/row_week_2_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout                              
+                                android:id="@+id/row_week_2_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s1_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s1_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s1_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                        
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_3_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_2" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/row_d1_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+
+                                <TextView
+                                    android:id="@+id/row_d2_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+
+                                <TextView
+                                    android:id="@+id/row_d3_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_3_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s2_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d6_s2_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s2_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_4_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_3" />
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/row_d1_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/row_d2_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+
+                                <TextView
+                                    android:id="@+id/row_d3_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_4_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s3_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s3_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s3_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_5_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_4" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d1_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                        
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d2_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d3_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_5_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s4_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s4_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s4_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+                        
+                        <TableRow
+                            android:id="@+id/row_week_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_6_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_5" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d1_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d2_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d3_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_6_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s5_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s5_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s5_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                         </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_7_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_6" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d1_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d2_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d3_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_7_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s6_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s6_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s6_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_8_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_7" />
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d1_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d2_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d3_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_8_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s7_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s7_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s7_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_9_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_8" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d1_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d2_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                            
+                                <TextView
+                                    android:id="@+id/row_d3_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_9_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s8_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s8_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s8_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_10_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_9" />
+
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d1_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d2_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d3_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />                            
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_10_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s9_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s9_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s9_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />                            
+                            </LinearLayout>
+                            
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/row_week_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_11_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_10" />
+                        
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d1_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                                                        
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d2_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                                                        
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d3_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_11_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s10_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s10_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s10_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+                        
+                        <TableRow
+                            android:id="@+id/row_week_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/row_week_12_col_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="2dip"
+                                android:src="@drawable/stunde_11" />
+                        
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d1_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d1_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d1_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d2_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d2_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d2_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d3_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+
+                                <TextView
+                                    android:id="@+id/row_d3_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d3_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d4_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d4_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d4_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d5_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d5_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d5_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                            <LinearLayout
+                                android:id="@+id/row_week_12_col_7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="fill_parent"
+                                android:layout_margin="2dip"
+                                android:background="@color/col_table_day_default"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical" >
+                                <TextView
+                                    android:id="@+id/row_d6_s11_fach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="13dip"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/col_black" />
+                                <TextView
+                                    android:id="@+id/row_d6_s11_from"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                                <TextView
+                                    android:id="@+id/row_d6_s11_to"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tv_empty"
+                                    android:textSize="11dip"
+                                    android:textColor="@color/col_dark_blue" />
+                            </LinearLayout>
+                            
+                        </TableRow>
+                        
+                    </TableLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_week_hw"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/weekHomeworkHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_hausaufgaben"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:background="@drawable/menu_day_background"
+		        android:gravity="center" >
+
+                <ImageView
+		            android:id="@+id/menu_day_erl"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginRight="12dip"
+		            android:contentDescription="@string/tv_erledigen"
+		            android:src="@drawable/menu_day_erl" />
+
+		        <ImageView
+		            android:id="@+id/menu_day_ab"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:contentDescription="@string/tv_abgeben"
+		            android:src="@drawable/menu_day_ab" />
+                
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/list_hw_week"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+            </ListView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_week_tests"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/weekTestsHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_tests"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ListView
+                android:id="@+id/list_tests_week"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+            </ListView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/view_week_notizen"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/weekNotizenHeader"
+                style="@style/Header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tv_notizen"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <ListView
+                android:id="@+id/list_notes_week"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+            </ListView>
+
+        </LinearLayout>
+    </ViewFlipper>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/calendar_week.xml -->

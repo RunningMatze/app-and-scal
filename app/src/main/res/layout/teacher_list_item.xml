@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"    android:paddingBottom="4dip"
+    android:paddingTop="4dip" >
+    
+    <ImageButton
+        android:id="@+id/button_delete_teacher"
+        style="@style/DeleteButton"
+		android:contentDescription="@string/cd_teacher_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dip"
+        android:layout_marginLeft="6dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+    
+    <TextView
+        android:id="@+id/tv_teacher_list_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/button_info_teacher"
+        android:layout_toLeftOf="@+id/button_edit_teacher"
+		android:layout_alignTop="@+id/button_delete_teacher" 
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="4dip"
+        android:shadowColor="@color/col_blue"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.5"
+        android:text="TextView"
+        android:textColor="@color/col_black"
+        android:textSize="16dip" />
+
+    <ImageButton
+        android:id="@+id/button_info_teacher"
+        style="@style/InfoButton"
+		android:contentDescription="@string/cd_teacher_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_delete_teacher"
+        android:layout_below="@+id/button_delete_teacher" />
+
+    <ImageButton
+        android:id="@+id/button_edit_teacher"
+        style="@style/EditTeacherButton"
+		android:contentDescription="@string/cd_teacher_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button_info_teacher" />
+
+</RelativeLayout>

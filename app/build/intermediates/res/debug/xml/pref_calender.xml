@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory 
+        android:title="Kalender-Einstellungen">
+        <ListPreference 
+            android:entries="@array/year_text" 
+            android:entryValues="@array/year_value" 
+            android:title="Schuljahr" 
+            android:key="cal_year"
+            android:dialogTitle="Schuljahr"
+            android:summary="Bitte wähle das gewünschte Schuljahr"/>
+        <ListPreference 
+            android:entries="@array/land_text" 
+            android:entryValues="@array/land_value" 
+            android:title="Bundesland" 
+            android:key="cal_land"
+            android:dialogTitle="Bundesland"
+            android:summary="Bitte wähle Dein Bundesland (für die Ferien-Einstellung im Kalender)"/>
+        <CheckBoxPreference 
+            android:defaultValue="false" 
+            android:summaryOff="Samstag ist kein Unterrichtstag" 
+            android:title="Samstags-Unterricht" 
+            android:summaryOn="Samstag ist Unterrichtstag" 
+            android:key="cal_saturday"/>
+    </PreferenceCategory>
+
+</PreferenceScreen><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/xml/pref_calender.xml -->

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="2" >
+    
+
+    <TextView
+        android:id="@+id/testAddHeader"
+        style="@style/Header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/tv_test_add"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#aaffffff" >
+
+        <LinearLayout
+            android:id="@+id/wrap_test_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dip"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:paddingTop="5dip" >
+
+                <TextView
+                    android:id="@+id/labelFach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_faecher_fach"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_fach_bezeichnung"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelFach"
+                    android:layout_toLeftOf="@+id/button_fach_search"
+                    android:enabled="false"
+                    android:hint="@string/hint_fach_search"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="false" >
+                    <requestFocus />
+                </EditText>
+                
+
+                <ImageButton
+                    android:id="@+id/button_fach_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/edit_fach_bezeichnung"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+                
+                <TextView
+                    android:id="@+id/labelArt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/button_fach_search"
+                    android:text="@string/tv_test_art"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+
+                <EditText
+                    android:id="@+id/edit_test_art"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/labelArt"
+                    android:layout_toLeftOf="@+id/button_testart_search"
+                    android:inputType="textCapWords|textPersonName"
+                    android:singleLine="true" >
+                </EditText>
+                
+
+                <ImageButton
+                    android:id="@+id/button_testart_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/edit_test_art"
+                    android:layout_alignParentRight="true"
+                    android:src="@android:drawable/ic_search_category_default" />
+                
+                
+            </RelativeLayout>
+
+		    <RelativeLayout
+		        android:id="@+id/relativeLayout2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		
+                <TextView
+                    android:id="@+id/labelTestDatum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/tv_test_am"
+                    android:textColor="@color/col_black"
+                    android:textSize="15dip" />
+		        
+		        <ImageButton
+		            android:id="@+id/button_navi_home"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelTestDatum"
+		            android:layout_alignParentLeft="true"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_home"
+		            android:src="@drawable/button_navi_home" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_previous"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_below="@+id/labelTestDatum"
+		            android:layout_toRightOf="@id/button_navi_home"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_back"
+		            android:src="@drawable/button_navi_previous" />
+		
+		        <ImageButton
+		            android:id="@+id/button_navi_next"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:layout_below="@+id/labelTestDatum"
+		            android:background="@android:color/transparent"
+		            android:contentDescription="@string/cd_navi_next"
+		            android:src="@drawable/button_navi_next" />
+		
+		        <RelativeLayout
+		            android:id="@+id/cal_testtermin_topic"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_alignBottom="@id/button_navi_home"
+		            android:layout_alignTop="@id/button_navi_home"
+		            android:layout_alignWithParentIfMissing="true"
+		            android:layout_marginBottom="2dip"
+		            android:layout_marginTop="2dip"
+		            android:layout_toLeftOf="@id/button_navi_next"
+		            android:layout_toRightOf="@id/button_navi_previous"
+		            android:background="@color/col_day_default" >
+		
+		            <TextView
+		                android:id="@+id/tv_test_testtag"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_alignParentLeft="true"
+		                android:layout_centerVertical="true"
+		                android:layout_marginLeft="4dip"
+		                android:text=""
+		                android:textColor="@color/col_white"
+						android:textSize="16dip" />
+		
+		        </RelativeLayout>
+                
+		    </RelativeLayout>
+		   	    		   			 
+		 	<RelativeLayout
+		        android:id="@+id/relativeLayout4"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+		        android:layout_marginBottom="5dip" >
+		        
+	            <TextView
+	                android:id="@+id/labelTestBeschreibung"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_alignParentTop="true"
+	                android:layout_marginTop="2dip"
+	                android:layout_marginBottom="2dip"
+	                android:text="@string/tv_beschreibung"
+	                android:textColor="@color/col_black"
+	                android:textSize="15dip" />
+	
+	            <EditText
+	                android:id="@+id/edit_test_beschreibung"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@+id/labelTestBeschreibung"
+	                android:inputType="textMultiLine" />
+            		   	    		   	
+		    </RelativeLayout>
+
+		 	<LinearLayout
+		 	    android:id="@+id/linearLayout2"
+		 	    android:layout_width="fill_parent"
+		 	    android:layout_height="wrap_content"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+				android:baselineAligned="false"
+		 	    android:weightSum="2" >
+
+		 		<LinearLayout
+		 		    android:id="@+id/linearLayout3"
+		 		    android:layout_width="wrap_content"
+		 		    android:layout_height="fill_parent"
+		 		    android:layout_weight="1"
+		 		    android:orientation="vertical" >
+
+			 		<TextView
+	                    android:id="@+id/labelNote"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/tv_test_note"
+	                    android:textColor="@color/col_black"
+	                    android:textSize="15dip" />
+	
+	                <EditText
+	                    android:id="@+id/edit_test_note"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+						android:inputType="text"
+		                android:singleLine="true" >
+	                </EditText>
+		 		    
+		 		</LinearLayout>
+
+		 		<LinearLayout
+		 		    android:id="@+id/linearLayout4"
+		 		    android:layout_width="wrap_content"
+		 		    android:layout_height="fill_parent"
+		 		    android:layout_weight="1"
+		 		    android:orientation="vertical" >
+	                
+		 		 	<TextView
+	                    android:id="@+id/labelDurchschnitt"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/tv_test_durchschnitt"
+	                    android:textColor="@color/col_black"
+	                    android:textSize="15dip" />
+	
+	                <EditText
+	                    android:id="@+id/edit_test_durchschnitt"
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="wrap_content"
+						android:inputType="text"
+		                android:singleLine="true" >
+	                </EditText>
+		 		    
+
+		 		</LinearLayout>
+
+		 	</LinearLayout>
+		    
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/button_test_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:text="@string/button_eintragen" />
+
+                <Button
+                    android:id="@+id/button_test_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/button_back" />
+                
+            </LinearLayout>
+		   	
+		</LinearLayout>
+        
+    </ScrollView>
+    
+</LinearLayout>

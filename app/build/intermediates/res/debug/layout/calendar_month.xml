@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dip" >
+
+        <ImageButton
+            android:id="@+id/button_navi_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_home"
+            android:src="@drawable/button_navi_home" />
+
+        <ImageButton
+            android:id="@+id/button_navi_previous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/button_navi_home"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_back"
+            android:src="@drawable/button_navi_previous" />
+
+        <ImageButton
+            android:id="@+id/button_navi_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cd_navi_next"
+            android:src="@drawable/button_navi_next" />
+
+        <RelativeLayout
+            android:id="@+id/cal_month_topic"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/button_navi_home"
+            android:layout_alignTop="@id/button_navi_home"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toLeftOf="@id/button_navi_next"
+            android:layout_toRightOf="@id/button_navi_previous"
+            android:background="@color/col_day_default" >
+
+            <TextView
+                android:id="@+id/tv_cal_monthyear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="12dip"
+                android:text="@string/tv_empty"
+                android:textColor="@color/col_white"
+                android:textSize="17dip"
+                android:textStyle="bold" />
+
+            </RelativeLayout>
+    </RelativeLayout>
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/menu_day_background"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/menu_month_s"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_plan"
+            android:src="@drawable/menu_day_s" />
+
+        <ImageView
+            android:id="@+id/menu_month_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_hausaufgaben"
+            android:src="@drawable/menu_day_h" />
+
+        <ImageView
+            android:id="@+id/menu_month_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="18dip"
+            android:contentDescription="@string/tv_tests_list"
+            android:src="@drawable/menu_day_t" />
+
+        <ImageView
+            android:id="@+id/menu_month_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/cd_menu_notes"
+            android:src="@drawable/menu_day_n" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/view_week_plan"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/weekPlanHeader"
+            style="@style/Header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/tv_monatsansicht"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <HorizontalScrollView
+            android:id="@+id/scroll_month_view_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+	
+	        <ScrollView
+	            android:id="@+id/scroll_month_view"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content" >
+	
+	            <TableLayout
+	                android:id="@+id/table_month_view"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:background="@color/col_mail_gray" >
+	
+	                <TableRow
+	                    android:id="@+id/row_month_days"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/header_day_mo"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_default"
+		                    android:text="@string/day_mo"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	                    
+	                    <TextView
+		                    android:id="@+id/header_day_di"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_default"
+		                    android:text="@string/day_di"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	                    
+	                    <TextView
+		                    android:id="@+id/header_day_mi"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_default"
+		                    android:text="@string/day_mi"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/header_day_do"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_default"
+		                    android:text="@string/day_do"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	
+	                    <TextView
+		                    android:id="@+id/header_day_fr"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_default"
+		                    android:text="@string/day_fr"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	                    
+	               		<TextView
+		                    android:id="@+id/header_day_sa"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_weekend"
+		                    android:text="@string/day_sa"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	               		
+	               		<TextView
+		                    android:id="@+id/header_day_so"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:minWidth="36dip"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@color/col_day_weekend"
+		                    android:text="@string/day_so"
+		                    android:textAppearance="?android:attr/textAppearanceLarge"
+		                    android:textColor="@color/col_white" />
+	               		
+	            	</TableRow>
+	                
+	                <TableRow
+	                    android:id="@+id/row_month_1"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+	                        android:id="@+id/month_day_1"
+	                        android:layout_width="wrap_content"
+	                        android:layout_height="wrap_content"
+	                        android:layout_margin="2dip"
+	                        android:background="@drawable/day_unmarked"
+	                        android:gravity="center_horizontal"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+	                        android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_2"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+	                        android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_3"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+	                        android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/month_day_4"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+	                        android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	
+	                    <TextView
+		                    android:id="@+id/month_day_5"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+	                        android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_6"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+	                        android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	                    <TextView
+		                    android:id="@+id/month_day_7"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	            	</TableRow>
+
+	                <TableRow
+	                    android:id="@+id/row_month_2"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/month_day_8"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_9"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_10"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/month_day_11"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	
+	                    <TextView
+		                    android:id="@+id/month_day_12"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_13"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	                    <TextView
+		                    android:id="@+id/month_day_14"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	            	</TableRow>
+	            	
+	                <TableRow
+	                    android:id="@+id/row_month_3"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/month_day_15"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_16"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_17"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/month_day_18"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	
+	                    <TextView
+		                    android:id="@+id/month_day_19"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_20"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	                    <TextView
+		                    android:id="@+id/month_day_21"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	            	</TableRow>
+	                
+	                <TableRow
+	                    android:id="@+id/row_month_4"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/month_day_22"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_23"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_24"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/month_day_25"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	
+	                    <TextView
+		                    android:id="@+id/month_day_26"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_27"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	                    <TextView
+		                    android:id="@+id/month_day_28"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	            	</TableRow>
+	                	                	                	                	                	               			                    	                
+	                <TableRow
+	                    android:id="@+id/row_month_5"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/month_day_29"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_30"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_31"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    	                    	                    
+	                    <TextView
+		                    android:id="@+id/month_day_32"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	
+	                    <TextView
+		                    android:id="@+id/month_day_33"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_34"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	               		
+	                    <TextView
+		                    android:id="@+id/month_day_35"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	            	</TableRow>
+	            	
+	                <TableRow
+	                    android:id="@+id/row_month_6"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content" >
+	
+	                    <TextView
+		                    android:id="@+id/month_day_36"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	                    <TextView
+		                    android:id="@+id/month_day_37"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_margin="2dip"
+		                    android:gravity="center_horizontal"
+		                    android:background="@drawable/day_unmarked"
+		                    android:text="@string/tv_empty"
+		                    android:textAppearance="?android:attr/textAppearanceMedium"
+		                    android:textStyle="bold"
+		                    android:textColor="@color/col_black" />
+	                    
+	            	</TableRow>
+	                	          	
+	          	</TableLayout>
+	                
+	        </ScrollView>
+		
+		</HorizontalScrollView>
+
+        </LinearLayout>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/calendar_month.xml -->

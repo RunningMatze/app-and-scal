@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_test_day"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/col_day_default"
+        android:text="@string/tv_empty"
+        android:textColor="@color/col_white"
+        android:textSize="14dip"
+        android:visibility="gone"
+        android:gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:id="@+id/listItemTest"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dip" >
+
+        <TextView
+            android:id="@+id/tv_hw_fach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/tv_empty"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/col_black"
+            android:textSize="26dip"
+            android:textStyle="bold"
+            android:shadowColor="@color/col_day_default"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="3" />
+        
+        <TextView
+            android:id="@+id/tv_label_termin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginRight="2dip"
+            android:text="@string/tv_test_am"
+            android:textColor="@color/col_black"
+            android:textSize="14dip" />
+
+        <TextView
+            android:id="@+id/tv_date_termin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_label_termin"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="14dip" />
+        
+        <TextView
+            android:id="@+id/tv_test_art"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_label_termin"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="16dip"
+            android:shadowColor="@color/col_day_default"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1.5" />
+
+        
+        <TextView
+            android:id="@+id/tv_label_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_test_art"
+            android:layout_marginRight="2dip"
+            android:text="@string/tv_test_note"
+            android:textColor="@color/col_black"
+            android:textSize="15dip" />
+        
+        <TextView
+            android:id="@+id/tv_test_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_label_note"
+            android:layout_below="@+id/tv_test_art"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="15dip" />
+        
+        <TextView
+            android:id="@+id/tv_label_durchschnitt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_label_note"
+            android:layout_marginTop="8dip"
+            android:layout_marginRight="2dip"
+            android:text="@string/tv_test_durchschnitt"
+            android:textColor="@color/col_black"
+            android:textSize="15dip" />
+        
+        <TextView
+            android:id="@+id/tv_test_durchschnitt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tv_label_durchschnitt"
+            android:layout_below="@+id/tv_label_note"
+            android:layout_marginTop="8dip"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="15dip" />
+        
+        <ImageButton
+            android:id="@+id/button_edit_test"
+            style="@style/SettingsSmallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_label_note"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/cd_test_edit"
+            android:src="@drawable/settings_small_button" />
+        
+        <ImageButton
+            android:id="@+id/button_delete_test"
+            style="@style/DeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_label_durchschnitt"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/cd_test_delete" />
+        
+        <TextView
+            android:id="@+id/tv_test_beschreibung"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_label_durchschnitt"
+            android:layout_marginTop="5dip"
+            android:text="@string/tv_empty"
+            android:textColor="@color/col_dark_blue"
+            android:textSize="14dip" />
+        
+    </RelativeLayout>
+
+</LinearLayout>

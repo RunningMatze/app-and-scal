@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="4dip" >
+
+    <ImageView
+        android:id="@+id/icon_teacher_search_mw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dip"
+        android:layout_marginRight="6dip"
+        android:layout_marginTop="4dip"
+        android:clickable="false"
+        android:src="@drawable/teacher_man" />
+
+    <TextView
+        android:id="@+id/tv_teacher_search_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:clickable="false"
+        android:text="TextView"
+        android:textColor="@color/col_dark_blue"
+        android:textSize="16dip" />
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/teacher_search_item.xml -->

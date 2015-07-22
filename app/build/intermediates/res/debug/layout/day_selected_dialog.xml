@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollDayDialog"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="180dip" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dip" >
+
+        <Button
+            android:id="@+id/button_show"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dip"
+            android:enabled="false"
+            android:text="@string/button_anzeigen" />
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dip"
+            android:text="@string/button_eintragen" />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_back" />
+
+    </LinearLayout>
+
+</ScrollView><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/day_selected_dialog.xml -->

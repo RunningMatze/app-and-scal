@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.androloc.schoolplaner"
+    android:versionCode="8"
+    android:versionName="1.2.3" >
+
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="13"/>
+    <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" 
+        android:theme="@style/maintheme"
+        android:allowBackup="true">
+        
+        <activity 
+            android:name="StartUpActivity" 
+	        android:label="@string/icon_text" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
+        </activity>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version">
+        </meta-data>
+        
+        <activity 
+            android:name="CalendarPreferencesActivity"
+            android:theme="@style/notitle">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+
+        <activity 
+            android:name="CalendarSettingsActivity"
+            android:theme="@style/notitle">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
+            android:name="MenuMainActivity"
+            android:label="@string/icon_text"
+            android:launchMode="singleTop">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".CalendarCreationActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name=".CalendarDeleteActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity 
+            android:name="TeacherListActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="TeacherAddActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="TeacherEditActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="TeacherListAdapter"></activity>
+        
+        <activity android:name="TeacherSearchAdapter"></activity>
+        
+        <activity
+            android:name="FaecherListActivity"
+            android:label="@string/icon_text">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="FaecherAddActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="FaecherSearchAdapter"></activity>
+        
+        <activity android:name="FaecherListAdapter"></activity>
+        
+        <activity
+            android:name="FaecherEditActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="CalendarTabActivity"></activity>
+        
+        <activity
+            android:name="CalendarDayActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="CalendarWeekActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="CalendarMonthActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="PlanEditActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="PlanListActivity"
+            android:label="@string/icon_text">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="PlanListAdapter"></activity>
+        <activity android:name="PlanFachSearchActivity" android:label="@string/icon_text"></activity>
+        <activity android:name="PlanFachSearchAdapter"></activity>
+        <activity android:name="DayPlanListAdapter"></activity>
+        <activity 
+            android:name="HomeworkAddActivity" 
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="HomeworkEditActivity"
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="TestsAddActivity"
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="TestsEditActivity"
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="NotesAddActivity"
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="NotesEditActivity"
+            android:label="@string/icon_text">
+          	<intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+   </application>
+    
+</manifest>

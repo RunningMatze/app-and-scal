@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <ScrollView
+        android:id="@+id/scrollViewMain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+
+        <LinearLayout
+            android:id="@+id/menuRows"
+            android:baselineAligned="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:id="@+id/menuRow_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:baselineAligned="false">
+
+
+                <LinearLayout
+                    android:id="@+id/menuItem_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_calendar" />
+
+
+
+                    <TextView
+                        android:id="@+id/menuText_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Calendar"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/menuItem_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Homework"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_homework" />
+
+                    <TextView
+                        android:id="@+id/menuText_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Homework"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                
+                </LinearLayout>
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/menuRow_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="2"
+                android:baselineAligned="false">
+
+
+                <LinearLayout
+                    android:id="@+id/menuItem_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Notes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_notes" />
+
+                    <TextView
+                        android:id="@+id/menuText_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Notes"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/menuItem_4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Tests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_tests" />
+
+                    <TextView
+                        android:id="@+id/menuText_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Tests"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                
+                </LinearLayout>
+
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/menuRow_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:baselineAligned="false" >
+                
+                <LinearLayout
+                    android:id="@+id/menuItem_5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_plan" />
+
+                    <TextView
+                        android:id="@+id/menuText_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tv_plan"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    
+                </LinearLayout>
+            
+                <LinearLayout
+                    android:id="@+id/menuItem_6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Faecher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_faecher" />
+
+                    <TextView
+                        android:id="@+id/menuText_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Faecher"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+                
+            </LinearLayout>
+            
+            <LinearLayout
+                android:id="@+id/menuRow_4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="2"
+                android:baselineAligned="false" >
+                
+                <LinearLayout
+                    android:id="@+id/menuItem_7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Teacher"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_teacher" />
+
+                    <TextView
+                        android:id="@+id/menuText_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Teacher"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+            
+                <LinearLayout
+                    android:id="@+id/menuItem_8"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical" 
+                    android:layout_weight="1">
+
+                    <ImageButton
+                        android:id="@+id/menuButton_Exit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/menu_button_exit" />
+
+                    <TextView
+                        android:id="@+id/menuText_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:text="@string/menuItem_Exit"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+            
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+    </com.google.android.gms.ads.AdView>
+
+</LinearLayout><!-- From: file:/E:/Entwicklung/AndroApps/Schuelerkalender/app/src/main/res/layout/menu_main.xml -->
